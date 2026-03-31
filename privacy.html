@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Privacy Policy — Slapper</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:        #0a0a0a;
+      --surface:   #111111;
+      --border:    #1e1e1e;
+      --lime:      #C8FF00;
+      --lime-dim:  #a0cc00;
+      --text:      #e0e0e0;
+      --muted:     #888888;
+      --radius:    12px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI",
+                   Roboto, Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      padding: 48px 20px 80px;
+    }
+
+    .wrap {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 48px;
+      padding-bottom: 28px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .logo-mark {
+      width: 44px;
+      height: 44px;
+      background: var(--lime);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      flex-shrink: 0;
+    }
+
+    .brand { display: flex; flex-direction: column; }
+
+    .brand-name {
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: -0.3px;
+      color: #fff;
+    }
+
+    .brand-doc {
+      font-size: 13px;
+      color: var(--muted);
+      font-weight: 400;
+    }
+
+    nav-back {
+      display: block;
+      margin-left: auto;
+    }
+
+    .back-link {
+      font-size: 13px;
+      color: var(--lime);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      opacity: 0.85;
+      transition: opacity 0.15s;
+    }
+    .back-link:hover { opacity: 1; }
+
+    .meta-banner {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 16px 20px;
+      margin-bottom: 40px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .meta-item { display: flex; flex-direction: column; gap: 2px; }
+
+    .meta-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    .meta-value {
+      font-size: 14px;
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    section {
+      margin-bottom: 40px;
+    }
+
+    h1 {
+      font-size: 32px;
+      font-weight: 800;
+      letter-spacing: -0.8px;
+      color: var(--lime);
+      margin-bottom: 8px;
+      line-height: 1.15;
+    }
+
+    h2 {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--lime);
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      letter-spacing: -0.2px;
+    }
+
+    h2::before {
+      content: '';
+      display: block;
+      width: 3px;
+      height: 18px;
+      background: var(--lime);
+      border-radius: 2px;
+      flex-shrink: 0;
+    }
+
+    p { margin-bottom: 12px; color: var(--text); }
+    p:last-child { margin-bottom: 0; }
+
+    ul {
+      list-style: none;
+      margin: 10px 0 12px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    li {
+      padding-left: 20px;
+      position: relative;
+      color: var(--text);
+    }
+
+    li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--lime);
+      font-weight: 700;
+    }
+
+    .callout {
+      background: rgba(200, 255, 0, 0.06);
+      border: 1px solid rgba(200, 255, 0, 0.18);
+      border-radius: var(--radius);
+      padding: 16px 20px;
+      margin: 16px 0;
+      font-size: 15px;
+    }
+
+    .callout strong {
+      color: var(--lime);
+      display: block;
+      margin-bottom: 4px;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+    }
+
+    .sensor-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin: 16px 0;
+    }
+
+    @media (max-width: 500px) {
+      .sensor-grid { grid-template-columns: 1fr; }
+    }
+
+    .sensor-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 16px;
+    }
+
+    .sensor-name {
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--lime);
+      margin-bottom: 6px;
+    }
+
+    .sensor-desc {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    .sensor-tag {
+      display: inline-block;
+      margin-top: 8px;
+      padding: 2px 8px;
+      background: rgba(200, 255, 0, 0.1);
+      border-radius: 100px;
+      font-size: 11px;
+      color: var(--lime-dim);
+      font-weight: 600;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 48px 0;
+    }
+
+    .contact-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .contact-icon {
+      width: 40px;
+      height: 40px;
+      background: rgba(200, 255, 0, 0.1);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+
+    .contact-text { flex: 1; min-width: 180px; }
+    .contact-label { font-size: 13px; color: var(--muted); margin-bottom: 3px; }
+    .contact-email {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--lime);
+      text-decoration: none;
+    }
+    .contact-email:hover { text-decoration: underline; }
+
+    footer {
+      margin-top: 64px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    footer a {
+      color: var(--lime);
+      text-decoration: none;
+      margin: 0 6px;
+    }
+    footer a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="logo-mark">&#128075;</div>
+    <div class="brand">
+      <span class="brand-name">Slapper</span>
+      <span class="brand-doc">Privacy Policy</span>
+    </div>
+    <nav-back>
+      <a class="back-link" href="index.html">&#8592; Back</a>
+    </nav-back>
+  </header>
+
+  <section>
+    <h1>Privacy Policy</h1>
+    <p>Your privacy is important to us. This policy explains what data Slapper accesses, how it is used, and — most importantly — what we <em>never</em> do with it.</p>
+  </section>
+
+  <div class="meta-banner">
+    <div class="meta-item">
+      <span class="meta-label">Effective Date</span>
+      <span class="meta-value">March 31, 2026</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">Developer</span>
+      <span class="meta-value">Fethi Omur / Fethiverse</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">App</span>
+      <span class="meta-value">Slapper — iOS &amp; Android</span>
+    </div>
+  </div>
+
+  <section>
+    <h2>Introduction</h2>
+    <p>Slapper is a mobile app developed by <strong>Fethi Omur</strong>, operating under the brand <strong>Fethiverse</strong>. We built Slapper as a fun, privacy-first experience. We do not operate servers, build profiles, or sell data of any kind. Everything the app does happens on your device.</p>
+    <div class="callout">
+      <strong>Core Principle</strong>
+      Slapper collects no personal information. There are no accounts, no sign-ins, and no analytics SDKs in the app.
+    </div>
+  </section>
+
+  <section>
+    <h2>Information We Collect</h2>
+    <p><strong>We do not collect personal information.</strong> Slapper does not have user accounts, registration, email collection, advertising identifiers, crash analytics, or third-party tracking SDKs.</p>
+    <p>The app does not transmit any data to external servers. There are no servers — Slapper operates entirely offline.</p>
+    <ul>
+      <li>No name, email, or contact details</li>
+      <li>No device identifiers or advertising IDs</li>
+      <li>No usage analytics or behavioral tracking</li>
+      <li>No location data</li>
+      <li>No IP addresses or network logs</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Sensor Access</h2>
+    <p>Slapper uses the following device sensors to deliver its core functionality. All sensor data is processed entirely on-device and is never stored beyond the immediate computation or transmitted anywhere.</p>
+
+    <div class="sensor-grid">
+      <div class="sensor-card">
+        <div class="sensor-name">&#128247; Accelerometer</div>
+        <div class="sensor-desc">Used to detect slap gestures by measuring sudden physical motion of your device.</div>
+        <span class="sensor-tag">On-device only</span>
+      </div>
+      <div class="sensor-card">
+        <div class="sensor-name">&#128260; Gyroscope</div>
+        <div class="sensor-desc">Used together with the accelerometer to determine the orientation and direction of a slap (front, back, or side).</div>
+        <span class="sensor-tag">On-device only</span>
+      </div>
+      <div class="sensor-card">
+        <div class="sensor-name">&#127908; Microphone</div>
+        <div class="sensor-desc">Used only when you choose to record a custom slap sound. Recordings are saved locally on your device. We have no access to your microphone data.</div>
+        <span class="sensor-tag">Optional · Local only</span>
+      </div>
+    </div>
+
+    <p>Microphone access is granted only when you explicitly start a custom sound recording. The app does not listen in the background and does not process audio for slap detection — that is handled exclusively by the motion sensors.</p>
+  </section>
+
+  <section>
+    <h2>In-App Purchases</h2>
+    <p>Slapper offers optional non-consumable in-app purchases (sound packs). All payment processing is handled exclusively by Apple (App Store) or Google (Google Play).</p>
+    <ul>
+      <li>We do not receive, store, or process your payment information</li>
+      <li>Transaction records are managed entirely by Apple or Google</li>
+      <li>Purchases are linked to your Apple ID or Google account, not to Slapper</li>
+    </ul>
+    <p>Refer to Apple's or Google's privacy policies for details on how they handle payment data.</p>
+  </section>
+
+  <section>
+    <h2>Local Storage</h2>
+    <p>Slapper stores the following data locally on your device using the operating system's standard storage mechanisms (SharedPreferences on Android, NSUserDefaults on iOS, and local file storage):</p>
+    <ul>
+      <li><strong>App settings</strong> — sensitivity level, haptic preferences, sound pack selection</li>
+      <li><strong>Scores</strong> — your slap count, session records, and high scores</li>
+      <li><strong>Custom sound recordings</strong> — audio files you create using the Sound Studio feature</li>
+    </ul>
+    <p>None of this data is transmitted to us or any third party. It exists only on your device and is removed when you uninstall the app.</p>
+  </section>
+
+  <section>
+    <h2>Children's Privacy</h2>
+    <p>Slapper is not directed to children under the age of 13. We do not knowingly collect any personal information from children. Because Slapper collects no personal data from any user, there is no special risk to younger users — but if you are a parent or guardian with concerns, please contact us at the address below.</p>
+  </section>
+
+  <section>
+    <h2>Changes to This Policy</h2>
+    <p>We may update this Privacy Policy from time to time. When we do, we will revise the Effective Date shown at the top of this page. We encourage you to review this policy periodically. Continued use of Slapper after changes are posted constitutes your acceptance of the revised policy.</p>
+    <p>Because we collect no personal data, changes to this policy are unlikely to materially affect you.</p>
+  </section>
+
+  <section>
+    <h2>Contact</h2>
+    <p>If you have any questions or concerns about this Privacy Policy or Slapper's data practices, please reach out:</p>
+    <div class="contact-box">
+      <div class="contact-icon">&#9993;</div>
+      <div class="contact-text">
+        <div class="contact-label">Fethi Omur / Fethiverse</div>
+        <a class="contact-email" href="mailto:hello@fethiverse.com">hello@fethiverse.com</a>
+      </div>
+    </div>
+  </section>
+
+  <hr />
+
+  <footer>
+    <p>&copy; 2026 Fethi Omur / Fethiverse. All rights reserved.</p>
+    <p style="margin-top: 8px;">
+      <a href="index.html">Home</a>
+      <a href="terms.html">Terms of Service</a>
+    </p>
+  </footer>
+
+</div>
+</body>
+</html>

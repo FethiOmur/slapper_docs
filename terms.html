@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Terms of Service — Slapper</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:        #0a0a0a;
+      --surface:   #111111;
+      --border:    #1e1e1e;
+      --lime:      #C8FF00;
+      --lime-dim:  #a0cc00;
+      --text:      #e0e0e0;
+      --muted:     #888888;
+      --radius:    12px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI",
+                   Roboto, Helvetica, Arial, sans-serif;
+      font-size: 16px;
+      line-height: 1.7;
+      padding: 48px 20px 80px;
+    }
+
+    .wrap {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 48px;
+      padding-bottom: 28px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .logo-mark {
+      width: 44px;
+      height: 44px;
+      background: var(--lime);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 22px;
+      flex-shrink: 0;
+    }
+
+    .brand { display: flex; flex-direction: column; }
+
+    .brand-name {
+      font-size: 20px;
+      font-weight: 700;
+      letter-spacing: -0.3px;
+      color: #fff;
+    }
+
+    .brand-doc {
+      font-size: 13px;
+      color: var(--muted);
+      font-weight: 400;
+    }
+
+    nav-back { display: block; margin-left: auto; }
+
+    .back-link {
+      font-size: 13px;
+      color: var(--lime);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      opacity: 0.85;
+      transition: opacity 0.15s;
+    }
+    .back-link:hover { opacity: 1; }
+
+    .meta-banner {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 16px 20px;
+      margin-bottom: 40px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+
+    .meta-item { display: flex; flex-direction: column; gap: 2px; }
+
+    .meta-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      color: var(--muted);
+      font-weight: 600;
+    }
+
+    .meta-value {
+      font-size: 14px;
+      color: var(--text);
+      font-weight: 500;
+    }
+
+    section { margin-bottom: 40px; }
+
+    h1 {
+      font-size: 32px;
+      font-weight: 800;
+      letter-spacing: -0.8px;
+      color: var(--lime);
+      margin-bottom: 8px;
+      line-height: 1.15;
+    }
+
+    h2 {
+      font-size: 18px;
+      font-weight: 700;
+      color: var(--lime);
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      letter-spacing: -0.2px;
+    }
+
+    h2::before {
+      content: '';
+      display: block;
+      width: 3px;
+      height: 18px;
+      background: var(--lime);
+      border-radius: 2px;
+      flex-shrink: 0;
+    }
+
+    p { margin-bottom: 12px; color: var(--text); }
+    p:last-child { margin-bottom: 0; }
+
+    ul {
+      list-style: none;
+      margin: 10px 0 12px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    li {
+      padding-left: 20px;
+      position: relative;
+      color: var(--text);
+    }
+
+    li::before {
+      content: '—';
+      position: absolute;
+      left: 0;
+      color: var(--lime);
+      font-weight: 700;
+    }
+
+    .callout {
+      background: rgba(200, 255, 0, 0.06);
+      border: 1px solid rgba(200, 255, 0, 0.18);
+      border-radius: var(--radius);
+      padding: 16px 20px;
+      margin: 16px 0;
+      font-size: 15px;
+    }
+
+    .callout strong {
+      color: var(--lime);
+      display: block;
+      margin-bottom: 4px;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+    }
+
+    .callout-warn {
+      background: rgba(255, 180, 0, 0.06);
+      border: 1px solid rgba(255, 180, 0, 0.18);
+      border-radius: var(--radius);
+      padding: 16px 20px;
+      margin: 16px 0;
+      font-size: 15px;
+    }
+
+    .callout-warn strong {
+      color: #FFB400;
+      display: block;
+      margin-bottom: 4px;
+      font-size: 13px;
+      text-transform: uppercase;
+      letter-spacing: 0.4px;
+    }
+
+    .section-num {
+      display: inline-block;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 1px 7px;
+      font-size: 11px;
+      color: var(--muted);
+      font-weight: 600;
+      margin-right: 4px;
+      vertical-align: middle;
+      letter-spacing: 0.3px;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid var(--border);
+      margin: 48px 0;
+    }
+
+    .contact-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .contact-icon {
+      width: 40px;
+      height: 40px;
+      background: rgba(200, 255, 0, 0.1);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+
+    .contact-text { flex: 1; min-width: 180px; }
+    .contact-label { font-size: 13px; color: var(--muted); margin-bottom: 3px; }
+    .contact-email {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--lime);
+      text-decoration: none;
+    }
+    .contact-email:hover { text-decoration: underline; }
+
+    footer {
+      margin-top: 64px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      font-size: 13px;
+      color: var(--muted);
+    }
+
+    footer a {
+      color: var(--lime);
+      text-decoration: none;
+      margin: 0 6px;
+    }
+    footer a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+<div class="wrap">
+
+  <header>
+    <div class="logo-mark">&#128075;</div>
+    <div class="brand">
+      <span class="brand-name">Slapper</span>
+      <span class="brand-doc">Terms of Service</span>
+    </div>
+    <nav-back>
+      <a class="back-link" href="index.html">&#8592; Back</a>
+    </nav-back>
+  </header>
+
+  <section>
+    <h1>Terms of Service</h1>
+    <p>Please read these Terms of Service carefully before using Slapper. By downloading or using the app you agree to be bound by these terms.</p>
+  </section>
+
+  <div class="meta-banner">
+    <div class="meta-item">
+      <span class="meta-label">Effective Date</span>
+      <span class="meta-value">March 31, 2026</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">Developer</span>
+      <span class="meta-value">Fethi Omur / Fethiverse</span>
+    </div>
+    <div class="meta-item">
+      <span class="meta-label">Governing Law</span>
+      <span class="meta-value">Republic of Turkey</span>
+    </div>
+  </div>
+
+  <section>
+    <h2><span class="section-num">01</span> Acceptance of Terms</h2>
+    <p>By downloading, installing, or using Slapper ("the App"), you acknowledge that you have read, understood, and agree to be bound by these Terms of Service ("Terms") and our <a href="privacy.html" style="color: var(--lime); text-decoration: none; border-bottom: 1px solid rgba(200,255,0,0.3);">Privacy Policy</a>.</p>
+    <p>If you do not agree to these Terms, please do not use the App.</p>
+    <p>These Terms apply to all users of Slapper on iOS and Android platforms.</p>
+  </section>
+
+  <section>
+    <h2><span class="section-num">02</span> License to Use</h2>
+    <p>Subject to your compliance with these Terms, Fethi Omur / Fethiverse grants you a limited, non-exclusive, non-transferable, revocable license to:</p>
+    <ul>
+      <li>Install and use Slapper on a device you own or control</li>
+      <li>Use the App for personal, non-commercial entertainment purposes</li>
+    </ul>
+    <p>This license does not grant you any rights to the App's source code, assets, sound files, or intellectual property beyond what is explicitly stated here.</p>
+    <div class="callout">
+      <strong>Scope of License</strong>
+      This is a personal-use license. Commercial use, redistribution, or sub-licensing is not permitted.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="section-num">03</span> In-App Purchases</h2>
+    <p>Slapper offers optional non-consumable in-app purchases including sound packs and the Sound Studio feature. Key terms:</p>
+    <ul>
+      <li><strong>Non-consumable:</strong> Purchased content is yours permanently and is restored on reinstall via your Apple or Google account</li>
+      <li><strong>No subscription:</strong> All purchases are one-time payments with no recurring charges</li>
+      <li><strong>All sales final:</strong> Purchases are generally non-refundable, subject to Apple's or Google's refund policies</li>
+      <li><strong>Refund requests:</strong> Must be submitted directly to Apple (App Store) or Google (Google Play) — we do not process refunds ourselves</li>
+    </ul>
+    <p>Prices are displayed in your local currency at the time of purchase and are subject to change.</p>
+  </section>
+
+  <section>
+    <h2><span class="section-num">04</span> Intellectual Property</h2>
+    <p>All content within Slapper — including but not limited to the App itself, its design, sound files, animations, graphics, code, and branding — is the exclusive property of <strong>Fethi Omur / Fethiverse</strong> and is protected by applicable copyright, trademark, and intellectual property laws.</p>
+    <p>Your purchase of sound packs grants you a license to use those sounds within the App. It does not transfer ownership or grant rights to export, redistribute, or use those sounds outside the App.</p>
+  </section>
+
+  <section>
+    <h2><span class="section-num">05</span> Prohibited Use</h2>
+    <p>You agree not to:</p>
+    <ul>
+      <li>Reverse engineer, decompile, or disassemble any part of the App</li>
+      <li>Copy, modify, distribute, sell, or sublicense the App or its content</li>
+      <li>Use the App for any unlawful purpose or in violation of any regulations</li>
+      <li>Attempt to bypass, disable, or circumvent any in-app purchase verification</li>
+      <li>Use the App in any way that could damage, overburden, or impair it</li>
+      <li>Claim ownership of, or attempt to register, Slapper's name, logo, or branding</li>
+    </ul>
+    <div class="callout-warn">
+      <strong>Important</strong>
+      Violations of these terms may result in immediate termination of your license to use the App and, where applicable, legal action.
+    </div>
+  </section>
+
+  <section>
+    <h2><span class="section-num">06</span> Disclaimer of Warranties</h2>
+    <p>Slapper is provided <strong>"as is"</strong> and <strong>"as available"</strong> without warranties of any kind, either express or implied, including but not limited to:</p>
+    <ul>
+      <li>Warranties of merchantability or fitness for a particular purpose</li>
+      <li>Warranties that the App will be error-free, uninterrupted, or free of viruses</li>
+      <li>Warranties that defects will be corrected</li>
+    </ul>
+    <p>Slapper is an entertainment application. Slap detection is based on motion sensor thresholds and may not respond identically across all devices. Use of the App is at your own discretion.</p>
+  </section>
+
+  <section>
+    <h2><span class="section-num">07</span> Limitation of Liability</h2>
+    <p>To the fullest extent permitted by applicable law, Fethi Omur / Fethiverse shall not be liable for any indirect, incidental, special, consequential, or punitive damages arising out of or related to your use of Slapper.</p>
+    <p>In no event shall our total liability to you exceed the amount you paid for in-app purchases in the twelve (12) months immediately preceding the claim.</p>
+    <p>Some jurisdictions do not allow certain limitations of liability, so some of the above may not apply to you.</p>
+  </section>
+
+  <section>
+    <h2><span class="section-num">08</span> Governing Law</h2>
+    <p>These Terms are governed by and construed in accordance with the laws of the <strong>Republic of Turkey</strong>, without regard to its conflict of law provisions.</p>
+    <p>Any dispute arising from or relating to these Terms or your use of Slapper shall be subject to the exclusive jurisdiction of the courts of Turkey.</p>
+  </section>
+
+  <section>
+    <h2><span class="section-num">09</span> Modifications to Terms</h2>
+    <p>We reserve the right to modify these Terms at any time. When we make changes, we will update the Effective Date at the top of this page. We may also notify you through the App.</p>
+    <p>Your continued use of Slapper after any modifications constitutes your acceptance of the updated Terms. If you do not agree to the modified Terms, you should stop using the App.</p>
+  </section>
+
+  <section>
+    <h2><span class="section-num">10</span> Contact</h2>
+    <p>If you have any questions about these Terms, please contact us:</p>
+    <div class="contact-box">
+      <div class="contact-icon">&#9993;</div>
+      <div class="contact-text">
+        <div class="contact-label">Fethi Omur / Fethiverse</div>
+        <a class="contact-email" href="mailto:hello@fethiverse.com">hello@fethiverse.com</a>
+      </div>
+    </div>
+  </section>
+
+  <hr />
+
+  <footer>
+    <p>&copy; 2026 Fethi Omur / Fethiverse. All rights reserved.</p>
+    <p style="margin-top: 8px;">
+      <a href="index.html">Home</a>
+      <a href="privacy.html">Privacy Policy</a>
+    </p>
+  </footer>
+
+</div>
+</body>
+</html>
